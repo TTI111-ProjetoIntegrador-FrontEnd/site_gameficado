@@ -31,7 +31,7 @@ function loadQuestion() {
         options[i].textContent = questions[currentQuestion].options[i];
     }
     
-    document.getElementById('score').textContent = `Pontuação: ${score}`;
+    // document.getElementById('score').textContent = `Pontuação: ${score}`;
     document.getElementById('next-btn').style.display = 'none';
 }
 
