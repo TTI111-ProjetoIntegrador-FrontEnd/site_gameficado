@@ -1,19 +1,94 @@
 const questions = [
-    {
-        question: "Qual é a capital da França?",
-        options: ["Londres", "Madri", "Paris", "Berlim"],
-        answer: 2
-    },
-    {
-        question: "Qual é o maior planeta do Sistema Solar?",
-        options: ["Terra", "Júpiter", "Marte", "Saturno"],
-        answer: 1
-    },
-    {
-        question: "Quem pintou a Mona Lisa?",
-        options: ["Van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-        answer: 1
-    }
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a1"),  // Gerado aleatoriamente
+    pergunta: "Qual é o resultado de 235 + 487?",
+    resposta: "722",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a2"),
+    pergunta: "Se você tem 150 maçãs e compra mais 75, quantas maçãs você tem agora?",
+    resposta: "225",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a3"),
+    pergunta: "Quanto é 800 - 456?",
+    resposta: "344",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a4"),
+    pergunta: "Se você tinha 200 reais e gastou 75, quanto dinheiro resta?",
+    resposta: "125",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a5"),
+    pergunta: "Qual é o produto de 12 e 15?",
+    resposta: "180",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a6"),
+    pergunta: "Se uma caixa contém 8 chocolates e você compra 5 caixas, quantos chocolates você tem?",
+    resposta: "40",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a7"),
+    pergunta: "Quanto é 144 dividido por 12?",
+    resposta: "12",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a8"),
+    pergunta: "Se você tem 50 balas e quer dividir igualmente entre 5 amigos, quantas balas cada amigo receberá?",
+    resposta: "10",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4a9"),
+    pergunta: "Se 3 kg de arroz custam 18 reais, quanto custam 5 kg?",
+    resposta: "30",
+    nivel: "médio"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4aa"),
+    pergunta: "Se um carro percorre 240 km com 20 litros de gasolina, quantos litros são necessários para percorrer 360 km?",
+    resposta: "30",
+    nivel: "médio"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4ab"),
+    pergunta: "Maria tem 120 figurinhas e dá 45 para seu amigo. Quantas figurinhas ela ainda tem?",
+    resposta: "75",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4ac"),
+    pergunta: "João comprou 3 camisetas por 30 reais cada. Se ele paga com uma nota de 100 reais, quanto dinheiro ele receberá de troco?",
+    resposta: "10",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4ad"),
+    pergunta: "Se 4 maçãs custam 10 reais, quanto custam 10 maçãs?",
+    resposta: "25",
+    nivel: "fácil"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4ae"),
+    pergunta: "Um atleta corre 5 km em 25 minutos. Quanto tempo ele levará para correr 15 km na mesma velocidade?",
+    resposta: "75 minutos",
+    nivel: "médio"
+  },
+  {
+    _id: ObjectId("64b8e9a6e142c3f4c8b5f4af”),
+    pergunta: "Se um produto custa 200 reais e está com 20% de desconto, qual é o preço com desconto?",
+    resposta: "160",
+    nivel: "fácil"
+  }
 ];
 
 let currentQuestion = 0;
