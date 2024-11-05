@@ -1,7 +1,8 @@
 const questions = [
   {
     pergunta: "Qual é o resultado de 235 + 487?",
-    resposta: "722",
+    opcoes: ["702","768","823","722"],
+    resposta: 3,
     nivel: "fácil"
   },
   {
@@ -86,9 +87,9 @@ function loadQuestion() {
     const questionElement = document.getElementById('question');
     const options = document.getElementsByClassName('option');
     
-    questionElement.textContent = questions[currentQuestion].question;
+    questionElement.textContent = questions[currentQuestion].pergunta;
     for (let i = 0; i < options.length; i++) {
-        options[i].textContent = questions[currentQuestion].options[i];
+        options[i].textContent = questions[currentQuestion].opcoes[i];
     }
     
     // document.getElementById('score').textContent = `Pontuação: ${score}`;
@@ -96,7 +97,7 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectedOption) {
-    const correctAnswer = questions[currentQuestion].answer;
+    const correctAnswer = questions[currentQuestion].resposta;
     if (selectedOption === correctAnswer) {
         alert('Correto!');
         score++;
