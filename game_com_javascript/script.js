@@ -91,6 +91,18 @@ const questions = [
   }
 ];
 
+// Função para embaralhar o array de questões
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+    }
+}
+
+// Embaralha as questões e seleciona as 5 primeiras
+shuffleArray(questions);
+const selectedQuestions = questions.slice(0, 5);
+
 let currentQuestion = 0;
 let score = 0;
 
@@ -101,9 +113,9 @@ function loadQuestion() {
     const questionElement = document.getElementById('question');
     const options = document.getElementsByClassName('option');
     
-    questionElement.textContent = questions[currentQuestion].pergunta;
+    questionElement.textContent = selectedQuestions[currentQuestion].pergunta;
     for (let i = 0; i < options.length; i++) {
-        options[i].textContent = questions[currentQuestion].opcoes[i];
+        options[i].textContent = selectedQuestions[currentQuestion].opcoes[i];
     }
     
     // document.getElementById('score').textContent = `Pontuação: ${score}`;
@@ -111,7 +123,7 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectedOption) {
-    const correctAnswer = questions[currentQuestion].resposta;
+    const correctAnswer = selectedQuestions[currentQuestion].resposta;
     if (selectedOption === correctAnswer) {
         alert('Correto!');
         score++;
@@ -123,7 +135,7 @@ function checkAnswer(selectedOption) {
 
 function nextQuestion() {
     currentQuestion++;
-    if (currentQuestion < questions.length) {
+    if (currentQuestion < selectedQuestions.length) {
         loadQuestion();
     } else {
         showResults();
@@ -133,10 +145,48 @@ function nextQuestion() {
 function showResults() {
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
-    document.getElementById('final-score').textContent = `Sua pontuação final é: ${score} de ${questions.length}`;
+    document.getElementById('final-score').textContent = `Sua pontuação final é: ${score} de ${selectedQuestions.length}`;
+
+    // Calculando as porcentagens
+    const correctPercentage = (score / selectedQuestions.length) * 100;
+    const incorrectPercentage = 100 - correctPercentage;
+
+    // Criando o gráfico de setores
+    const ctx = document.getElementById('result-chart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'pie', // Tipo de gráfico
+        data: {
+            labels: ['Acertos', 'Erros'],
+            datasets: [{
+                data: [correctPercentage, incorrectPercentage],
+                backgroundColor: ['#4caf50', '#f44336'], // Cores para acertos e erros
+                borderColor: ['#ffffff', '#ffffff'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return `${tooltipItem.label}: ${tooltipItem.raw.toFixed(2)}%`;
+                        }
+                    }
+                }
+            }
+        }
+    });
 }
 
 function restartQuiz() {
+    // Embaralha novamente e reinicia as variáveis
+    shuffleArray(questions);
+    selectedQuestions.length = 0;  // Limpa o array de questões selecionadas
+    selectedQuestions.push(...questions.slice(0, 5));  // Adiciona novas 5 questões
     currentQuestion = 0;
     score = 0;
     loadQuestion();
