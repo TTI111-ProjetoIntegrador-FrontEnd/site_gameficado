@@ -7,72 +7,86 @@ const questions = [
   },
   {
     pergunta: "Se você tem 150 maçãs e compra mais 75, quantas maçãs você tem agora?",
-    resposta: "225",
+    opcoes: ["225","250","275","300"],
+    resposta: 0,
     nivel: "fácil"
   },
   {
     pergunta: "Quanto é 800 - 456?",
-    resposta: "344",
+    opcoes: ["444","451","344","340"],
+    resposta: 2,
     nivel: "fácil"
   },
   {
     pergunta: "Se você tinha 200 reais e gastou 75, quanto dinheiro resta?",
-    resposta: "125",
+    opcoes: ["125","150","175","200"],
+    resposta: 0,
     nivel: "fácil"
   },
   {
     pergunta: "Qual é o produto de 12 e 15?",
-    resposta: "180",
+    opcoes: ["225","150","180","200"],
+    resposta: 2,
     nivel: "fácil"
   },
   {
     pergunta: "Se uma caixa contém 8 chocolates e você compra 5 caixas, quantos chocolates você tem?",
-    resposta: "40",
+    opcoes: ["20","40","30","50"],
+    resposta: 1,
     nivel: "fácil"
   },
   {
     pergunta: "Quanto é 144 dividido por 12?",
-    resposta: "12",
+    opcoes: ["14","16","15","12"],
+    resposta: 3,
     nivel: "fácil"
   },
   {
     pergunta: "Se você tem 50 balas e quer dividir igualmente entre 5 amigos, quantas balas cada amigo receberá?",
-    resposta: "10",
+    opcoes: ["8","10","15","9"],
+    resposta: 1,
     nivel: "fácil"
   },
   {
     pergunta: "Se 3 kg de arroz custam 18 reais, quanto custam 5 kg?",
-    resposta: "30",
+    opcoes: ["30","25","27","40"],
+    resposta: 0,
     nivel: "médio"
   },
   {
     pergunta: "Se um carro percorre 240 km com 20 litros de gasolina, quantos litros são necessários para percorrer 360 km?",
-    resposta: "30",
+    opcoes: ["25","30","27","40"],
+    resposta: 1,
     nivel: "médio"
   },
   {
     pergunta: "Maria tem 120 figurinhas e dá 45 para seu amigo. Quantas figurinhas ela ainda tem?",
-    resposta: "75",
+    opcoes: ["25","50","75","100"],
+    resposta: 2,
     nivel: "fácil"
   },
   {
     pergunta: "João comprou 3 camisetas por 30 reais cada. Se ele paga com uma nota de 100 reais, quanto dinheiro ele receberá de troco?",
-    resposta: "10",
+    opcoes: ["70","50","25","10"],
+    resposta: 3,
     nivel: "fácil"
   },
   {
     pergunta: "Se 4 maçãs custam 10 reais, quanto custam 10 maçãs?",
-    resposta: "25",
+    opcoes: ["25","30","45","50"],
+    resposta: 0,
     nivel: "fácil"
   },
   {
     pergunta: "Um atleta corre 5 km em 25 minutos. Quanto tempo ele levará para correr 15 km na mesma velocidade?",
-    resposta: "75 minutos",
+    opcoes: ["50 minutos","75 minutos","90 minutos","100 minutos"],
+    resposta: 1,
     nivel: "médio"
   },
   {
     pergunta: "Se um produto custa 200 reais e está com 20% de desconto, qual é o preço com desconto?",
-    resposta: "160",
+    opcoes: ["130","150","160","170"],
+    resposta: 2,
     nivel: "fácil"
   }
 ];
